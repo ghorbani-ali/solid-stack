@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: crypto-currency-exchange
+  labels: 
+    app: crypto-currency-exchange
+data:
+  # API_KEY: ''
+  DEBUG: "True"
+  DATABASE_NAME: 'crypto'
+  DATABASE_USER: 'crypto'
+  DATABASE_PASSWORD: ''
+  DATABASE_HOST: '192.168.57.154'
+  DATABASE_PORT: '5000'

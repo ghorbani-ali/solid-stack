@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: crypto-currency-exchange
+  labels: 
+    app: crypto-currency-exchange
 spec:
   selector:
     matchLabels:
@@ -21,6 +23,9 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        envFrom:
+        - configMapRef:
+            name: crypto-currency-exchange
         ports:
         - name: http
           containerPort: 8000
