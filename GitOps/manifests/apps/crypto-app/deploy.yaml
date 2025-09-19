@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: crypto-currency-exchange
+  name: crypto-app
   labels: 
-    app: crypto-currency-exchange
+    app: crypto-app
 spec:
   selector:
     matchLabels:
-      app: crypto-currency-exchange
+      app: crypto-app
   template:
     metadata:
       labels:
-        app: crypto-currency-exchange
+        app: crypto-app
     spec:
       containers:
-      - name: crypto-currency-exchange
+      - name: crypto-app
         image: ghorbaniali/solid-stack-app:v1
         resources:
           requests:
@@ -25,9 +25,9 @@ spec:
             cpu: "500m"
         envFrom:
         - configMapRef:
-            name: crypto-currency-exchange
+            name: crypto-app
         - secretRef:
-            name: crypto-currency-exchange
+            name: crypto-app
         ports:
         - name: http
           containerPort: 8000

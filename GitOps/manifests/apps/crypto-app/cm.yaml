@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: crypto-currency-exchange
+  name: crypto-app
   labels: 
-    app: crypto-currency-exchange
+    app: crypto-app
 data:
   # API_KEY: ''
   DEBUG: "True"
