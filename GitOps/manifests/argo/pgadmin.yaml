@@ -6,16 +6,15 @@ metadata:
 spec:
   project: default
   sources:
-  - chart: pgadmin4
-    repoURL: https://helm.runix.net
+  - repoURL: https://helm.runix.net
+    chart: pgadmin4
     targetRevision: 1.50.0
     helm:
       releaseName: pgadmin4
       valueFiles:
-      - $values/values-patch.yaml
+      - $values/GitOps/manifests/infra/pgadmin/values-patch.yaml
   - repoURL: https://github.com/ghorbani-ali/solid-stack.git
-    path: GitOps/manifests/infra/pgadmin
-    targetRevision: HEAD
+    targetRevision: main
     ref: values
   destination:
     server: "https://kubernetes.default.svc"
