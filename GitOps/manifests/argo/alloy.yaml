@@ -13,9 +13,6 @@ spec:
       releaseName: alloy
       valueFiles:
       - $values/GitOps/manifests/infra/alloy/values-patch.yaml
-  - repoURL: https://github.com/ghorbani-ali/solid-stack.git
-    targetRevision: main
-    ref: values
   destination:
     server: "https://kubernetes.default.svc"
     namespace: default
