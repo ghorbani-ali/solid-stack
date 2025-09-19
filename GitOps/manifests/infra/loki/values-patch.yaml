@@ -38,10 +38,16 @@ singleBinary:
 
 backend:
   replicas: 0
+  persistence:
+    volumeClaimsEnabled: false
 read:
   replicas: 0
+  persistence:
+    enableStatefulSetAutoDeletePVC: false
 write:
   replicas: 0
+  persistence:
+    volumeClaimsEnabled: false
 
 ingester:
   replicas: 0
