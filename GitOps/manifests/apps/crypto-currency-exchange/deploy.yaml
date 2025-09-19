@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: crypto-currency-exchange
-        image: docker.io/ghorbaniali/solid-stack-app:v1
+        image: ghorbaniali/solid-stack-app:v1
         resources:
           requests:
             memory: "128Mi"
