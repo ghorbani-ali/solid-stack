@@ -40,6 +40,12 @@ singleBinary:
   persistence:
     enableStatefulSetAutoDeletePVC: false
     enabled: false
+  extraVolumes:
+    - name: data
+      emptyDir: {}
+  extraVolumeMounts:
+    - name: data
+      mountPath: /var/loki
 
 backend:
   replicas: 0
@@ -72,12 +78,3 @@ bloomCompactor:
   replicas: 0
 bloomGateway:
   replicas: 0
-
-tableManager:
-  enabled: true
-  extraVolumes:
-    - name: data
-      emptyDir: {}
-  extraVolumeMounts:
-    - name: data
-      mountPath: /var/loki
