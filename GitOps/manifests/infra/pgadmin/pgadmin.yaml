@@ -12,7 +12,7 @@ spec:
     helm:
       releaseName: pgadmin
   - repoURL: https://github.com/ghorbani-ali/solid-stack.git
-    path: GitOps/manifests/infra
+    path: GitOps/manifests/infra/pgadmin
     targetRevision: HEAD
   destination:
     server: "https://kubernetes.default.svc"
