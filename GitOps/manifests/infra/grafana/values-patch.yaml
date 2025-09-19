@@ -10,3 +10,17 @@ grafana:
     auth.anonymous:
       enabled: true
       org_role: Admin
+
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Loki
+          type: loki
+          access: proxy
+          orgId: 1
+          url: http://loki.default.svc.cluster.local:3100
+          basicAuth: false
+          isDefault: false
+          version: 1
+          editable: false
