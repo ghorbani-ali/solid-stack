@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: git@github.com:ghorbani-ali/solid-stack.git
     targetRevision: HEAD
-    path: GitOps/manifests/apps
+    path: GitOps/manifests/apps/crypto-currency-exchange
   destination:
     server: https://kubernetes.default.svc
     namespace: 
