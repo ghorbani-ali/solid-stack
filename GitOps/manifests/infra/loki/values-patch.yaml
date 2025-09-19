@@ -1,12 +1,3 @@
-global:
-  extraVolumes:
-    - name: loki-data
-      emptyDir: {}
-
-  extraVolumeMounts:
-    - name: loki-data
-      mountPath: /var/loki
-
 loki:
   commonConfig:
     replication_factor: 1
@@ -84,7 +75,6 @@ bloomGateway:
 
 tableManager:
   enabled: true
-  resources: {}
   extraVolumes:
     - name: data
       emptyDir: {}
