@@ -1,0 +1,13 @@
+Django>=4.1.1
+djangorestframework
+django-credit-cards
+django-extensions
+django-q2
+python-dotenv
+psycopg2-binary
+plotly
+Pillow
+bitcoin
+eth-account
+pytz
+Requests
