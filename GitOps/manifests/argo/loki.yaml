@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   sources:
-  - repoURL: https://helm.runix.net
-    chart: pgadmin4
+  - repoURL: https://grafana.github.io
+    chart: grafana/loki
     targetRevision: 1.50.0
     helm:
-      releaseName: pgadmin4
+      releaseName: grafana/loki
       valueFiles:
       - $values/GitOps/manifests/infra/loki/values-patch.yaml
   - repoURL: https://github.com/ghorbani-ali/solid-stack.git
