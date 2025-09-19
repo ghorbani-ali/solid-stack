@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crypto-currency-exchange
+spec:
+  selector:
+    matchLabels:
+      app: crypto-currency-exchange
+  template:
+    metadata:
+      labels:
+        app: crypto-currency-exchange
+    spec:
+      containers:
+      - name: crypto-currency-exchange
+        image: <Image>
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "500m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          containerPort: 8000
