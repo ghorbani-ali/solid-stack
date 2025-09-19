@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pgadmin
+  namespace: argocd
+spec:
+  project: default
+  sources:
+  - chart: pgadmin
+    repoURL: https://helm.runix.net/runix/pgadmin4
+    targetRevision: 1.50.0
+    helm:
+      releaseName: pgadmin
+  - repoURL: https://github.com/ghorbani-ali/solid-stack.git
+    path: GitOps/manifests/infra
+    targetRevision: HEAD
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default
