@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: loki
+  namespace: argocd
+spec:
+  project: default
+  sources:
+  - repoURL: https://helm.runix.net
+    chart: pgadmin4
+    targetRevision: 1.50.0
+    helm:
+      releaseName: pgadmin4
+      valueFiles:
+      - $values/GitOps/manifests/infra/loki/values-patch.yaml
+  - repoURL: https://github.com/ghorbani-ali/solid-stack.git
+    targetRevision: main
+    ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - Validate=false
