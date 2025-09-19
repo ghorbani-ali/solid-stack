@@ -81,3 +81,13 @@ bloomCompactor:
   replicas: 0
 bloomGateway:
   replicas: 0
+
+tableManager:
+  enabled: true
+  resources: {}
+  extraVolumes:
+    - name: data
+      emptyDir: {}
+  extraVolumeMounts:
+    - name: data
+      mountPath: /var/loki
