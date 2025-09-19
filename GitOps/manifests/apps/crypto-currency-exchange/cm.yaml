@@ -9,6 +9,5 @@ data:
   DEBUG: "True"
   DATABASE_NAME: 'crypto'
   DATABASE_USER: 'crypto'
-  DATABASE_PASSWORD: ''
   DATABASE_HOST: '192.168.57.154'
   DATABASE_PORT: '5000'

@@ -26,6 +26,8 @@ spec:
         envFrom:
         - configMapRef:
             name: crypto-currency-exchange
+        - secretRef:
+            name: crypto-currency-exchange
         ports:
         - name: http
           containerPort: 8000
