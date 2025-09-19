@@ -47,6 +47,10 @@ singleBinary:
     - name: data
       mountPath: /var/loki
 
+gateway:
+  enabled: true
+  nginxConfig:
+    resolver: coredns.kube-system.svc.cluster.local
 backend:
   replicas: 0
   persistence:
@@ -59,7 +63,6 @@ write:
   replicas: 0
   persistence:
     volumeClaimsEnabled: false
-
 ingester:
   replicas: 0
 querier:
