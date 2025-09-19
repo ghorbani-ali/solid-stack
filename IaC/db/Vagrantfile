@@ -1,0 +1,26 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "cloud-image/debian-12"
+
+  dbs = {
+    "patroni-etcd-1"      => "192.168.57.151",
+    "patroni-etcd-2"      => "192.168.57.152",
+    "patroni-etcd-3"      => "192.168.57.153",
+    "patroni-postgres-1"  => "192.168.57.154",
+    "patroni-postgres-2"  => "192.168.57.155",
+    "patroni-postgres-3"  => "192.168.57.156"
+  }
+
+  dbs.each do |name, ip|
+    config.vm.define name do |node|
+      node.vm.hostname = name
+      node.vm.network "private_network",
+        name: "db-subnet",
+        ip: ip
+      node.vm.provider "virtualbox" do |vb|
+        vb.name = name
+        vb.cpus = 2
+        vb.memory = 2048
+      end
+    end
+  end
+end
