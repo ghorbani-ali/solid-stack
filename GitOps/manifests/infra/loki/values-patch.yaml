@@ -32,6 +32,9 @@ deploymentMode: SingleBinary
 
 singleBinary:
   replicas: 1
+  persistence:
+    enableStatefulSetAutoDeletePVC: true
+    enabled: true
 
 backend:
   replicas: 0
